@@ -61,3 +61,22 @@ C:\Users\ta2023\OneDrive - SPŠ, SOŠ a SOU, Hradec Králové\OneDrive\#PGM\Semi
 C:\Users\ta2023\OneDrive - SPŠ, SOŠ a SOU, Hradec Králové\OneDrive\#PGM\Seminární Projekty\Registrace jizd 2\Seminarka-Prihlasovaci-system\obj\Debug\Autoskola.exe
 C:\Users\ta2023\OneDrive - SPŠ, SOŠ a SOU, Hradec Králové\OneDrive\#PGM\Seminární Projekty\Registrace jizd 2\Seminarka-Prihlasovaci-system\obj\Debug\Autoskola.pdb
 C:\Users\ta2023\OneDrive - SPŠ, SOŠ a SOU, Hradec Králové\OneDrive\#PGM\Seminární Projekty\Registrace jizd 2\Seminarka-Prihlasovaci-system\bin\Debug\Autoskola.pdb
+C:\Users\yellow\OneDrive - SPŠ, SOŠ a SOU, Hradec Králové\OneDrive\#PGM\Seminární Projekty\Seminarka-Prihlasovaci-system-2\bin\Debug\Autoskola.exe.config
+C:\Users\yellow\OneDrive - SPŠ, SOŠ a SOU, Hradec Králové\OneDrive\#PGM\Seminární Projekty\Seminarka-Prihlasovaci-system-2\bin\Debug\Autoskola.exe
+C:\Users\yellow\OneDrive - SPŠ, SOŠ a SOU, Hradec Králové\OneDrive\#PGM\Seminární Projekty\Seminarka-Prihlasovaci-system-2\bin\Debug\Autoskola.pdb
+C:\Users\yellow\OneDrive - SPŠ, SOŠ a SOU, Hradec Králové\OneDrive\#PGM\Seminární Projekty\Seminarka-Prihlasovaci-system-2\obj\Debug\Autoskola.csproj.AssemblyReference.cache
+C:\Users\yellow\OneDrive - SPŠ, SOŠ a SOU, Hradec Králové\OneDrive\#PGM\Seminární Projekty\Seminarka-Prihlasovaci-system-2\obj\Debug\Autoskola.csproj.SuggestedBindingRedirects.cache
+C:\Users\yellow\OneDrive - SPŠ, SOŠ a SOU, Hradec Králové\OneDrive\#PGM\Seminární Projekty\Seminarka-Prihlasovaci-system-2\obj\Debug\Autoskola.Form1.resources
+C:\Users\yellow\OneDrive - SPŠ, SOŠ a SOU, Hradec Králové\OneDrive\#PGM\Seminární Projekty\Seminarka-Prihlasovaci-system-2\obj\Debug\Autoskola.FormGenerovat.resources
+C:\Users\yellow\OneDrive - SPŠ, SOŠ a SOU, Hradec Králové\OneDrive\#PGM\Seminární Projekty\Seminarka-Prihlasovaci-system-2\obj\Debug\Autoskola.FormJizdy.resources
+C:\Users\yellow\OneDrive - SPŠ, SOŠ a SOU, Hradec Králové\OneDrive\#PGM\Seminární Projekty\Seminarka-Prihlasovaci-system-2\obj\Debug\Autoskola.FormPrihlaseni.resources
+C:\Users\yellow\OneDrive - SPŠ, SOŠ a SOU, Hradec Králové\OneDrive\#PGM\Seminární Projekty\Seminarka-Prihlasovaci-system-2\obj\Debug\Autoskola.FormRegistrace.resources
+C:\Users\yellow\OneDrive - SPŠ, SOŠ a SOU, Hradec Králové\OneDrive\#PGM\Seminární Projekty\Seminarka-Prihlasovaci-system-2\obj\Debug\Autoskola.FormSystem.resources
+C:\Users\yellow\OneDrive - SPŠ, SOŠ a SOU, Hradec Králové\OneDrive\#PGM\Seminární Projekty\Seminarka-Prihlasovaci-system-2\obj\Debug\Autoskola.FormVlastniHeslo.resources
+C:\Users\yellow\OneDrive - SPŠ, SOŠ a SOU, Hradec Králové\OneDrive\#PGM\Seminární Projekty\Seminarka-Prihlasovaci-system-2\obj\Debug\Autoskola.FormVytvoritJizdu.resources
+C:\Users\yellow\OneDrive - SPŠ, SOŠ a SOU, Hradec Králové\OneDrive\#PGM\Seminární Projekty\Seminarka-Prihlasovaci-system-2\obj\Debug\Autoskola.FormZapomenute.resources
+C:\Users\yellow\OneDrive - SPŠ, SOŠ a SOU, Hradec Králové\OneDrive\#PGM\Seminární Projekty\Seminarka-Prihlasovaci-system-2\obj\Debug\Autoskola.Properties.Resources.resources
+C:\Users\yellow\OneDrive - SPŠ, SOŠ a SOU, Hradec Králové\OneDrive\#PGM\Seminární Projekty\Seminarka-Prihlasovaci-system-2\obj\Debug\Autoskola.csproj.GenerateResource.cache
+C:\Users\yellow\OneDrive - SPŠ, SOŠ a SOU, Hradec Králové\OneDrive\#PGM\Seminární Projekty\Seminarka-Prihlasovaci-system-2\obj\Debug\Autoskola.csproj.CoreCompileInputs.cache
+C:\Users\yellow\OneDrive - SPŠ, SOŠ a SOU, Hradec Králové\OneDrive\#PGM\Seminární Projekty\Seminarka-Prihlasovaci-system-2\obj\Debug\Autoskola.exe
+C:\Users\yellow\OneDrive - SPŠ, SOŠ a SOU, Hradec Králové\OneDrive\#PGM\Seminární Projekty\Seminarka-Prihlasovaci-system-2\obj\Debug\Autoskola.pdb
