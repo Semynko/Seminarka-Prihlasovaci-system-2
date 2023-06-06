@@ -1,0 +1,10 @@
+admin
+guest
+ondra
+pasek
+fungus
+heslo
+vasek
+gustav
+trump
+biden
