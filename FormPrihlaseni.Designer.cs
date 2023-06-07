@@ -97,6 +97,7 @@ namespace Autoskola
             // 
             this.textBoxHeslo.Location = new System.Drawing.Point(130, 103);
             this.textBoxHeslo.Name = "textBoxHeslo";
+            this.textBoxHeslo.PasswordChar = '●';
             this.textBoxHeslo.Size = new System.Drawing.Size(232, 20);
             this.textBoxHeslo.TabIndex = 6;
             // 

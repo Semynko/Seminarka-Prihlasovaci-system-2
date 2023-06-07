@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace Autoskola
 {
     internal class Jizda
     {
+        public static string radek;
         private string datum;
         //private string zformatovanyDatum;
         private string student;
@@ -38,25 +40,30 @@ namespace Autoskola
             }
         }
 
-
+        public string EditaceJizdy()
+        {
+            Jizda j = new Jizda(datum, student, instruktor);
+            string zformaDat = j.ZformatovaniDatumu();
+            return $"{zformaDat};{student};{instruktor}";
+        }
 
         public void ZapsatNovouJizdu()
         //Funkce na zapsání nově naplánované jízdy do souboru
         //a do listboxu (dodělat)
         {
+            string FDatum;
             Jizda j = new Jizda(datum, student, instruktor);
-            string zformatovanyDatumu = j.ZformatovaniDatumu();
+            FDatum = j.ZformatovaniDatumu();
             Jizda.VycistHodnotyZJizdy();
             using (StreamWriter sw = new StreamWriter("jizdy.txt", false, Encoding.UTF8))
             {
-                string doplneni = $"{zformatovanyDatumu};{student};{instruktor}";
                 if (FormJizdy.text == "")
                 {
-                    sw.Write(doplneni);
+                    sw.Write($"{FDatum};{student};{instruktor}");
                 }
                 else
                 {
-                    sw.Write(FormJizdy.text + Environment.NewLine + doplneni);
+                    sw.Write(FormJizdy.text + Environment.NewLine + $"{FDatum};{student};{instruktor}");
                 }
             }
             VycistHodnotyZJizdy();

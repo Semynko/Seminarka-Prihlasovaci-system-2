@@ -41,6 +41,7 @@
             // 
             this.textBoxNoveHeslo.Location = new System.Drawing.Point(108, 26);
             this.textBoxNoveHeslo.Name = "textBoxNoveHeslo";
+            this.textBoxNoveHeslo.PasswordChar = '●';
             this.textBoxNoveHeslo.Size = new System.Drawing.Size(219, 20);
             this.textBoxNoveHeslo.TabIndex = 0;
             // 
@@ -48,6 +49,7 @@
             // 
             this.textBoxPotvrdit.Location = new System.Drawing.Point(108, 65);
             this.textBoxPotvrdit.Name = "textBoxPotvrdit";
+            this.textBoxPotvrdit.PasswordChar = '●';
             this.textBoxPotvrdit.Size = new System.Drawing.Size(219, 20);
             this.textBoxPotvrdit.TabIndex = 1;
             // 
