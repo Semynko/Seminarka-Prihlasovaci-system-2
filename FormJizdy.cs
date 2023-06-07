@@ -28,60 +28,49 @@ namespace Autoskola
         private void BtnVytvoritJizdu_Click(object sender, EventArgs e)
         //po zmáčknutí talčítka Vytvořit jídzu
         {
-            //FormJizdy fj = this;
-            
-
             FormVytvoritJizdu fvj = new FormVytvoritJizdu();
             if(fvj.ShowDialog() == DialogResult.OK)
             {
                 Jizda j = new Jizda(FormVytvoritJizdu.datum, FormVytvoritJizdu.student, FormVytvoritJizdu.instrukt);
                 j.ZapsatNovouJizdu();
-                ZapsaniHned(FormVytvoritJizdu.datum, FormVytvoritJizdu.student, FormVytvoritJizdu.instrukt);
+                lbxSeznamJizd.Items.Add(j.EditaceJizdy());
             }
         }
-
 
         private void BtnUpravitJizdu_Click(object sender, EventArgs e)
         //po zmáčknutí tlačítka Upravit jízdu
         {
-            string vyber = lbxSeznamJizd.SelectedItem.ToString();//jizdalist[int.Parse((string)lbxSeznamJizd.SelectedItem)];
-            string[] radek = vyber.Split(';');
-            DateTime datumACas = DateTime.Parse(radek[0]);
-            string student = radek[1];
-            string instruktor = radek[2];
-            int index = lbxSeznamJizd.SelectedIndex;
-
-            FormVytvoritJizdu fvj = new FormVytvoritJizdu();
-            //fvj.Ej(datumACas, student, instruktor);
-            fvj.EditaceJizdyPrepis(datumACas, student, instruktor);
-            fvj.PrejmenovaniBtn(1);
+            string[] radek = lbxSeznamJizd.SelectedItem.ToString().Split(';'); //vybraný zápis se splitne na 3 samostatný záznamy
+            DateTime datumACas = DateTime.Parse(radek[0]); //1. záznam datum a čas
+            string student = radek[1];                  //2. záznam jméno studenta
+            string instruktor = radek[2];               //3. záznam jméno instruktora
+            FormVytvoritJizdu fvj = new FormVytvoritJizdu(); 
+            fvj.EditaceJizdyPrepis(datumACas, student, instruktor); //vepsání záznamu do textboxu/comboboxu .... pro editaci
+            fvj.PrejmenovaniBtn(1); //přejmenuje tlačítko na Upravit jízdu
 
 
-            if (fvj.ShowDialog() == DialogResult.OK)
+            if (fvj.ShowDialog() == DialogResult.OK) //otevře FormVytvoritJizdu
             {
+                string[] EJizda = fvj.PrepsaniJizdy();  //pole už editlého záznamu
+                Jizda j = new Jizda(EJizda[0], EJizda[1], EJizda[2]); //vytvoření objektu s upravenými hodnotami
+                string tmp = j.EditaceJizdy(); //vrátí upravený záznam pro zapsání (př. "12.10.2024 12:35;Herbert;Daniel Pašík")
+                lbxSeznamJizd.Items[lbxSeznamJizd.SelectedIndex] = tmp; //upraví vybraný záznam v listboxu
 
-                string[] EJizda = fvj.PrepsaniJizdy();
-                Jizda j = new Jizda(EJizda[0], EJizda[1], EJizda[2]);
-                //string EDatum = j.ZformatovaniDatumu();
-                //string ERadek = $"{EDatum};{EJizda[1]};{EJizda[2]}";
-                string tmp = j.EditaceJizdy();
-
-                lbxSeznamJizd.Items[index] = tmp;
-                using (StreamReader sr = new StreamReader("jizdy.txt"))
+                text = "";
+                for(int i = 0; i < lbxSeznamJizd.Items.Count; i++)
                 {
-                    text = sr.ReadToEnd();
-                    jizdalist = text.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+                    if (i != 0)
+                        text += Environment.NewLine;
+                    text += lbxSeznamJizd.Items[i];
                 }
+
+                //text = lbxSeznamJizd.Text; //uloží hodnoty z listboxu do proměné _text_
                 using (StreamWriter sw = new StreamWriter("jizdy.txt", false, Encoding.UTF8))
-                {
+                {//uloží veškeré jízdy do souboru jizdy.txt
                     sw.Write(text);
                 }
-
-                /*Jizda j = new Jizda(FormVytvoritJizdu.datum, FormVytvoritJizdu.student, FormVytvoritJizdu.instrukt);
-                j.ZapsatNovouJizdu();
-                ZapsaniHned(FormVytvoritJizdu.datum, FormVytvoritJizdu.student, FormVytvoritJizdu.instrukt);*/
             }
-            fvj.PrejmenovaniBtn(0);
+            fvj.PrejmenovaniBtn(0); //přejmenuje tlačítko na zpátky na Vytvořit jízdu
 
         }
 
@@ -90,15 +79,18 @@ namespace Autoskola
         //po zmáčknutí tlačítka
         {
             lbxSeznamJizd.Items.Remove(lbxSeznamJizd.SelectedItem);
-            string t = "";
+            text = "";
             for (int i = 0; i < lbxSeznamJizd.Items.Count; i++)
             {
-                t += lbxSeznamJizd.Items[i].ToString();
+                if (i != 0)
+                {
+                    text += Environment.NewLine;
+                }
+                text += lbxSeznamJizd.Items[i].ToString();
             }
-
             using (StreamWriter sw = new StreamWriter("jizdy.txt", false, Encoding.UTF8))
             {
-                sw.Write(t);
+                sw.Write(text);
             }
 
         }
@@ -115,10 +107,13 @@ namespace Autoskola
         //Funkce sloužící pro zapsání hodnot z jizdy.txt to list boxu
         {
             Jizda.VycistHodnotyZJizdy();
-
-            for (int i = 0; i < jizdalist.Length; i++)
+            if (text != "")
             {
-                formJizdy.lbxSeznamJizd.Items.Add(jizdalist[i]);
+                for (int i = 0; i < jizdalist.Length; i++)
+                {
+                    formJizdy.lbxSeznamJizd.Items.Add(jizdalist[i]);
+                }
+
             }
             formJizdy.lbxSeznamJizd.Refresh();
         }

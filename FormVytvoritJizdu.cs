@@ -30,11 +30,9 @@ namespace Autoskola
                     cmbxRidic.Items.Add(poleInstruktori[i]);
                 }
             }
-
             //Nastavení DateTimePickeru na vybrání datumu i času
             dtpJizda.Format = DateTimePickerFormat.Custom;
             dtpJizda.CustomFormat = "dd/MM/yyyy  HH:mm";
-            //if (FormVytvoritJizdu.        
         }
 
         private void BtnVytvoritJizdu_Click(object sender, EventArgs e)
@@ -43,22 +41,14 @@ namespace Autoskola
             instrukt = cmbxRidic.Text;
             datum = dtpJizda.Value.ToString();
             student = txtbxStudent.Text;
-
-            //MessageBox.Show(dtpJizda.Value.ToString());
-            //Jizda.ZapsatNovouJizdu(dtpJizda.Value.ToString());
-            
-
         }
 
         public void EditaceJizdyPrepis(DateTime datumACas, string student, string instruktor)
             //Funkce díky které se zapíší hodnoty vybrané jídzy co chce uživatel editovat
         {
-            
-            //string format = "dd/MM/yyyy  HH:mm";
-            dtpJizda.Value = datumACas;//System.DateTime.ParseExact(datumACas, format, CultureInfo.InvariantCulture);
+            dtpJizda.Value = datumACas;
             txtbxStudent.Text = student;
             cmbxRidic.Text = instruktor;
-
         }
         public void PrejmenovaniBtn(int i)
         {

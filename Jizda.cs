@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace Autoskola
 {
     internal class Jizda
     {
+        public static string radek;
         private string datum;
         //private string zformatovanyDatum;
         private string student;
@@ -41,47 +43,27 @@ namespace Autoskola
         public string EditaceJizdy()
         {
             Jizda j = new Jizda(datum, student, instruktor);
-            string zformatovanyDatum = j.ZformatovaniDatumu();
-            Jizda.VycistHodnotyZJizdy();
-            return $"{datum};{student};{instruktor}";
+            string zformaDat = j.ZformatovaniDatumu();
+            return $"{zformaDat};{student};{instruktor}";
         }
-
-        /*public string ZformatovaniDatumu2(string s)
-        //Funkce pro upravení datumu před zapsáním
-        //Upraví "01.01.2023 08:30:30" na "01.01.2023 08:30"
-        {
-            string[] pomocna = s.Split(':');
-            string[] pomo2 = pomocna[0].Split(' ');
-            if (pomo2[1].Length == 2)
-            {
-                return s = $"{pomocna[0] + ":" + pomocna[1]}";
-            }
-            else
-            {
-                return s = $"{pomo2[0]} 0{pomo2[1]}:{pomocna[1]}";
-            }
-        }*/
-
-
-
 
         public void ZapsatNovouJizdu()
         //Funkce na zapsání nově naplánované jízdy do souboru
         //a do listboxu (dodělat)
         {
+            string FDatum;
             Jizda j = new Jizda(datum, student, instruktor);
-            string zformatovanyDatumu = j.ZformatovaniDatumu();
+            FDatum = j.ZformatovaniDatumu();
             Jizda.VycistHodnotyZJizdy();
             using (StreamWriter sw = new StreamWriter("jizdy.txt", false, Encoding.UTF8))
             {
-                string doplneni = $"{zformatovanyDatumu};{student};{instruktor}";
                 if (FormJizdy.text == "")
                 {
-                    sw.Write(doplneni);
+                    sw.Write($"{FDatum};{student};{instruktor}");
                 }
                 else
                 {
-                    sw.Write(FormJizdy.text + Environment.NewLine + doplneni);
+                    sw.Write(FormJizdy.text + Environment.NewLine + $"{FDatum};{student};{instruktor}");
                 }
             }
             VycistHodnotyZJizdy();
