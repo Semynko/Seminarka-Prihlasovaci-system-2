@@ -38,6 +38,31 @@ namespace Autoskola
             }
         }
 
+        public string EditaceJizdy()
+        {
+            Jizda j = new Jizda(datum, student, instruktor);
+            string zformatovanyDatum = j.ZformatovaniDatumu();
+            Jizda.VycistHodnotyZJizdy();
+            return $"{datum};{student};{instruktor}";
+        }
+
+        /*public string ZformatovaniDatumu2(string s)
+        //Funkce pro upravení datumu před zapsáním
+        //Upraví "01.01.2023 08:30:30" na "01.01.2023 08:30"
+        {
+            string[] pomocna = s.Split(':');
+            string[] pomo2 = pomocna[0].Split(' ');
+            if (pomo2[1].Length == 2)
+            {
+                return s = $"{pomocna[0] + ":" + pomocna[1]}";
+            }
+            else
+            {
+                return s = $"{pomo2[0]} 0{pomo2[1]}:{pomocna[1]}";
+            }
+        }*/
+
+
 
 
         public void ZapsatNovouJizdu()

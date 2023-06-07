@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -49,16 +50,44 @@ namespace Autoskola
 
         }
 
+        public void EditaceJizdyPrepis(DateTime datumACas, string student, string instruktor)
+            //Funkce díky které se zapíší hodnoty vybrané jídzy co chce uživatel editovat
+        {
+            
+            //string format = "dd/MM/yyyy  HH:mm";
+            dtpJizda.Value = datumACas;//System.DateTime.ParseExact(datumACas, format, CultureInfo.InvariantCulture);
+            txtbxStudent.Text = student;
+            cmbxRidic.Text = instruktor;
+
+        }
+        public void PrejmenovaniBtn(int i)
+        {
+            if(i == 1)
+            {
+                BtnVytvoritJizdu.Text = "Upravit jízdu";
+            }
+            else
+            {
+                BtnVytvoritJizdu.Text = "Vytvořit jízdu";
+            }
+        }
+
+        public string[] PrepsaniJizdy()
+        {
+            string[] ret = {(dtpJizda.Value).ToString(), txtbxStudent.Text, cmbxRidic.Text };
+            return ret;
+        }
+
         private void FormVytvoritJizdu_Load(object sender, EventArgs e)
         {
             FormJizdy fj = new FormJizdy();
             fj.Refresh();
-            //qfj.lbx
         }
 
         private void cmbxRidic_SelectedIndexChanged(object sender, EventArgs e)
         {
             
         }
+
     }
 }

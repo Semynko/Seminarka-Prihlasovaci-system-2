@@ -105,6 +105,7 @@ namespace Autoskola
             // 
             this.textBoxHeslo.Location = new System.Drawing.Point(65, 134);
             this.textBoxHeslo.Name = "textBoxHeslo";
+            this.textBoxHeslo.PasswordChar = '●';
             this.textBoxHeslo.Size = new System.Drawing.Size(285, 20);
             this.textBoxHeslo.TabIndex = 7;
             // 
@@ -112,6 +113,7 @@ namespace Autoskola
             // 
             this.textBoxPotvrdit.Location = new System.Drawing.Point(65, 171);
             this.textBoxPotvrdit.Name = "textBoxPotvrdit";
+            this.textBoxPotvrdit.PasswordChar = '●';
             this.textBoxPotvrdit.Size = new System.Drawing.Size(285, 20);
             this.textBoxPotvrdit.TabIndex = 8;
             // 
