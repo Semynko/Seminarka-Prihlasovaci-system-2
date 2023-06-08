@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace Autoskola
@@ -38,6 +39,39 @@ namespace Autoskola
             {
                 return datum = $"{pomo2[0]} 0{pomo2[1]}:{pomocna[1]}";
             }
+        }
+
+        public void Podminky() //Podmínky _ funkce zjisťující zda uživatel neudělal chybu při zadávání hodnot
+        {
+            if((datum == null) || (student == "") || (instruktor == ""))
+            {
+                throw new Exception("Nezadali jste všechny hodnoty");
+            }
+            string edat = ZformatovaniDatumu();
+            string[] n1 = edat.Split(' '); //rozdělí "8.12.2022 14:25" na "8.12.2022" & "14:25"
+            string[] n2 = n1[1].Split(':'); //rozdělí "14:25" na "14" & "25"
+
+            string[] o1;
+            string[] o2;
+            string[] o3;
+            for (int i = 0; i < FormJizdy.jizdalist.Length; i++)//projde všechny záznamy jídzdy
+            {
+                o1 = FormJizdy.jizdalist[i].Split(';'); /*rozdělí "09.11.2023 23:39;a;Henri Barbosa" na 
+                                                          "09.11.2023 23:39" & "a" & "Henri Barbosa"*/
+                o2 = o1[0].Split(' '); //rozdělí "09.11.2023 23:39" na "09.11.2023" & "23:39"
+                o3 = o2[1].Split(':'); //rozdělí "23:39" na "23" & "39"
+                if (FormVytvoritJizdu.instrukt == instruktor) //zda se jedná o stejného instruktora
+                {
+                    if (n1[0] == o2[0]) //zda se jedná o stejný den
+                    {
+                        if (n2[0] == o3[0])//zda se jedná o stejnou hodinu
+                        {
+                            
+                        }
+                    }
+                }
+            }
+
         }
 
         public string EditaceJizdy()

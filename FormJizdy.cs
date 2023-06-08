@@ -17,6 +17,7 @@ namespace Autoskola
         //Pomocné globální proměné
         public static string[] jizdalist; //pole jednotlivých záznamů
         public static string text;
+
         public FormJizdy()
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace Autoskola
             if(fvj.ShowDialog() == DialogResult.OK)
             {
                 Jizda j = new Jizda(FormVytvoritJizdu.datum, FormVytvoritJizdu.student, FormVytvoritJizdu.instrukt);
+                j.Podminky(); //podmínky pro vyplnení všch polí
                 j.ZapsatNovouJizdu();
                 lbxSeznamJizd.Items.Add(j.EditaceJizdy());
             }
@@ -54,8 +56,8 @@ namespace Autoskola
                 string[] EJizda = fvj.PrepsaniJizdy();  //pole už editlého záznamu
                 Jizda j = new Jizda(EJizda[0], EJizda[1], EJizda[2]); //vytvoření objektu s upravenými hodnotami
                 string tmp = j.EditaceJizdy(); //vrátí upravený záznam pro zapsání (př. "12.10.2024 12:35;Herbert;Daniel Pašík")
+                j.Podminky(); //podmínky pro vyplnení všch polí
                 lbxSeznamJizd.Items[lbxSeznamJizd.SelectedIndex] = tmp; //upraví vybraný záznam v listboxu
-
                 text = "";
                 for(int i = 0; i < lbxSeznamJizd.Items.Count; i++)
                 {
